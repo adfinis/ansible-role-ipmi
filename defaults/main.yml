@@ -28,4 +28,11 @@ ipmi_network: {}
 #
 
 # IPMI SNMPv2 community
-ipmi_snmp_community: ''
+ipmi_snmp_community: False
+
+# An example would be:
+#
+# .. code-block:: YAML
+#
+#   ipmi_snmp_community: 'public'
+#
