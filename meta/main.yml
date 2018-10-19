@@ -3,6 +3,7 @@
 dependencies: []
 
 galaxy_info:
+  role_name: ipmi
   author: 'Adfinis SyGroup AG'
   description: 'IPMI management tools and configuration'
   company: 'Adfinis SyGroup AG'
