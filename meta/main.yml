@@ -25,5 +25,5 @@ galaxy_info:
         - 7
   galaxy_tags:
     - ipmi
-    - iLO
-    - IMM
+    - ilo
+    - imm
