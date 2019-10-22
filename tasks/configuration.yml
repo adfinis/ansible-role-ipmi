@@ -22,7 +22,7 @@
     - skip_ansible_lint
 
 - name: ipmi ip source check
-  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^IP Address Source.*Static Address'
+  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^IP Address Source.*Static Address' # noqa 306
   register: ipmi_register_ip_source
   failed_when: False
   changed_when: False
@@ -36,7 +36,7 @@
         ipmi_register_ip_source.rc != 0
 
 - name: ipmi ip address check
-  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^IP Address.*{{ ipmi_network.address }}'
+  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^IP Address.*{{ ipmi_network.address }}' # noqa 306
   register: ipmi_register_ip
   failed_when: False
   changed_when: False
@@ -45,7 +45,7 @@
         ipmi_network.address
 
 - name: ipmi netmask check
-  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^Subnet Mask.*{{ ipmi_network.netmask }}'
+  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^Subnet Mask.*{{ ipmi_network.netmask }}' # noqa 306
   register: ipmi_register_netmask
   failed_when: False
   changed_when: False
@@ -54,7 +54,7 @@
         ipmi_network.netmask
 
 - name: ipmi gateway check
-  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^Default Gateway IP.*{{ ipmi_network.gateway }}'
+  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^Default Gateway IP.*{{ ipmi_network.gateway }}' #noqa 306
   register: ipmi_register_gateway
   failed_when: False
   changed_when: False
@@ -63,7 +63,7 @@
         ipmi_network.gateway
 
 - name: ipmi snmp community check
-  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^SNMP Community String.*{{ ipmi_snmp_community }}'
+  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^SNMP Community String.*{{ ipmi_snmp_community }}' #noqa 306
   register: ipmi_register_snmp
   failed_when: False
   changed_when: False
