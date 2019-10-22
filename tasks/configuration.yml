@@ -54,7 +54,7 @@
         ipmi_network.netmask
 
 - name: ipmi gateway check
-  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^Default Gateway IP.*{{ ipmi_network.gateway }}' #noqa 306
+  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^Default Gateway IP.*{{ ipmi_network.gateway }}' # noqa 306
   register: ipmi_register_gateway
   failed_when: False
   changed_when: False
@@ -63,7 +63,7 @@
         ipmi_network.gateway
 
 - name: ipmi snmp community check
-  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^SNMP Community String.*{{ ipmi_snmp_community }}' #noqa 306
+  shell: ipmitool lan print {{ ipmi_channel }} | egrep '^SNMP Community String.*{{ ipmi_snmp_community }}' # noqa 306
   register: ipmi_register_snmp
   failed_when: False
   changed_when: False
